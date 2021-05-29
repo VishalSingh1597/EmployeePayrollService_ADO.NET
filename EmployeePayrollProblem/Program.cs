@@ -17,17 +17,17 @@ namespace EmployeePayrollProblem
             //AddRecordInput();
             //empRepo.UpdateBasicPay("Riya", 3000000);//UC3 update BasicPay where name is Terisa table 
             //empRepo.UpdatedSalaryFromDatabase("Terisa"); //UC4
-             empRepo.EmployeesFromForDateRange("2020-01-15"); //UC5
+            //empRepo.EmployeesFromForDateRange("2020-01-15"); //UC5
+          empRepo.FindGroupedByGenderRecord("F");
 
-            
             Console.ReadLine();
         }
         public static void AddRecordInput() //UC2 Adding record inputs on the table
         {
             try
-            {
+            {                
                 EmployeeRepository repository = new EmployeeRepository();//Creating a object of EmployeeRepository class.
-
+            
                 EmployeeModel model = new EmployeeModel();// Adding Employee To Database
                 DateTime now = DateTime.Now;
                 model.EmployeeId = 4;
@@ -44,7 +44,7 @@ namespace EmployeePayrollProblem
                 model.StartDate = now;
                 model.City = "Mumbai";
                 model.Country = "IN";
-
+               
                 repository.AddEmployee(model);  //call AddEmployee method and pass model values       
             }
             catch (Exception ex)

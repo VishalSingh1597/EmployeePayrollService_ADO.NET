@@ -16,12 +16,13 @@ namespace EmployeePayrollProblem
             //empRepo.GetAllEmployeeData();
             //AddRecordInput();
             //empRepo.UpdateBasicPay("Riya", 3000000);//UC3 update BasicPay where name is Terisa table 
+            //empRepo.UpdatedSalaryFromDatabase("Terisa"); //UC4
+             empRepo.EmployeesFromForDateRange("2020-01-15"); //UC5
 
-            empRepo.UpdatedSalaryFromDatabase("Terisa"); //UC4
-
+            
             Console.ReadLine();
         }
-        public static void AddRecordInput() //Adding record inputs on the table
+        public static void AddRecordInput() //UC2 Adding record inputs on the table
         {
             try
             {
@@ -32,7 +33,7 @@ namespace EmployeePayrollProblem
                 model.EmployeeId = 4;
                 model.EmployeeName = "Riya";
                 model.PhoneNumber = "788967543";
-                model.Address = "Mumbai";
+                model.Address = "Chandigarh";
                 model.Department = "HR";
                 model.Gender = "F";
                 model.BasicPay = 20000;

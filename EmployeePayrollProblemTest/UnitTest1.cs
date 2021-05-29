@@ -33,7 +33,7 @@ namespace EmployeePayrollProblemTest
             bool expected = true; //expected true 
             Assert.AreEqual(expected, actual); // Check equal or not
         }
-        /* TC4:- Compare Employee Payroll Object with DB to pass the Test.*/
+        // TC4:- Compare Employee Payroll Object with DB to pass the Test.
 
         [Test]
         public void GivenUpdateSalaryValue_CheckIfTheDatabaseGotUpdated()
@@ -49,7 +49,7 @@ namespace EmployeePayrollProblemTest
 
             Assert.AreEqual(BasicPay, expectedPay);  //Assert
         }
-        /* TC5:- Compare Employee Payroll Object with DB to pass the Test.*/
+        //TC6:- Compare Employee Payroll Object with DB to pass the Test.
 
         [Test]
         public void FindGroupedByGenderRecord()

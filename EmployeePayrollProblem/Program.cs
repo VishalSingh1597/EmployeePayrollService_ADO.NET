@@ -18,7 +18,8 @@ namespace EmployeePayrollProblem
             //empRepo.UpdateBasicPay("Riya", 3000000);//UC3 update BasicPay where name is Terisa table 
             //empRepo.UpdatedSalaryFromDatabase("Terisa"); //UC4
             //empRepo.EmployeesFromForDateRange("2020-01-15"); //UC5
-          empRepo.FindGroupedByGenderRecord("F");
+            //empRepo.FindGroupedByGenderRecord("F");
+            empRepo. InsertIntoMultipleTablesWithTransactions(); //UC7
 
             Console.ReadLine();
         }
@@ -30,19 +31,19 @@ namespace EmployeePayrollProblem
             
                 EmployeeModel model = new EmployeeModel();// Adding Employee To Database
                 DateTime now = DateTime.Now;
-                model.EmployeeId = 4;
-                model.EmployeeName = "Riya";
-                model.PhoneNumber = "788967543";
-                model.Address = "Chandigarh";
-                model.Department = "HR";
+                model.EmployeeId = 10;
+                model.EmployeeName = "Ankita";
+                model.PhoneNumber = "1237896541";
+                model.Address = "Pune";
+                model.Department = "Tester";
                 model.Gender = "F";
-                model.BasicPay = 20000;
-                model.Deductions = 2000;
-                model.TaxablePay = 100;
-                model.Tax = 200;
-                model.NetPay = 1800;
+                model.BasicPay = 45000;
+                model.Deductions = 4000;
+                model.TaxablePay = 1200;
+                model.Tax = 1000;
+                model.NetPay = 1500;
                 model.StartDate = now;
-                model.City = "Mumbai";
+                model.City = "Chennai";
                 model.Country = "IN";
                
                 repository.AddEmployee(model);  //call AddEmployee method and pass model values       

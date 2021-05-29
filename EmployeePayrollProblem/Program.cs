@@ -11,35 +11,43 @@ namespace EmployeePayrollProblem
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Employee Payroll Services Using ADO.NET Problem");
-            EmployeeRepository empRepo = new EmployeeRepository();
+            EmployeeRepository empRepo = new EmployeeRepository();//Creating a Object
             //empRepo.DataBaseConnection();
             //empRepo.GetAllEmployeeData();
             AddRecordInput();
+            empRepo.UpdateBasicPay("Riya", 3000000);//UC3 update BasicPay where name is Terisa table 
+
             Console.ReadLine();
         }
-        public static void AddRecordInput()
+        public static void AddRecordInput() //UC2 Adding record inputs on the table
         {
-            EmployeeRepository repository = new EmployeeRepository();//Creating a object of EmployeeRepository class.
-            EmployeeModel model = new EmployeeModel();// Adding Employee To Database
-            DateTime now = DateTime.Now;
-            model.EmployeeId = 1;
-            model.EmployeeName = "Vishal";
-            model.PhoneNumber = "9930315160";
-            model.Address = "Society No.04";
-            model.Department = "Developer";
-            model.Gender = "M";
-            model.BasicPay = 50000;
-            model.Deductions = 1000;
-            model.TaxablePay = 1800;
-            model.Tax = 800;
-            model.NetPay = 200;
-            model.StartDate = now;
-            model.City = "Mumbai";
-            model.Country = "IN";
+            try
+            {
+                EmployeeRepository repository = new EmployeeRepository();//Creating a object of EmployeeRepository class.
 
-            Console.WriteLine(repository.AddEmployee(model) ? "Record Successfully Inserted On Table" : "Failed"); //Conditional (Ternary) operator
-                                                                                                                   // repository.GetAllEmployeeData(); //call method to show table record
+                EmployeeModel model = new EmployeeModel();// Adding Employee To Database
+                DateTime now = DateTime.Now;
+                model.EmployeeId = 4;
+                model.EmployeeName = "Riya";
+                model.PhoneNumber = "788967543";
+                model.Address = "Chandigarh";
+                model.Department = "HR";
+                model.Gender = "F";
+                model.BasicPay = 20000;
+                model.Deductions = 2000;
+                model.TaxablePay = 100;
+                model.Tax = 200;
+                model.NetPay = 1800;
+                model.StartDate = now;
+                model.City = "Mumbai";
+                model.Country = "IN";
+
+                repository.AddEmployee(model);  //call AddEmployee method and pass model values       
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }
-

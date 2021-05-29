@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EmployeePayrollProblem
 {
-      class EmployeeModel  // Class to map the relational data base model to a entity.
+      public class EmployeeModel  // Class to map the relational data base model to a entity.
     {
         public int EmployeeId { get; set; }
         public string EmployeeName { get; set; }

@@ -170,9 +170,38 @@ namespace EmployeePayrollProblem
             }
             return true;
         }
+        //UC4:- Ability to update the salary i.e. the base pay for Employee.
+
+        public double UpdatedSalaryFromDatabase(string EmployeeName)
+        {
+
+            string cconnectionString = @"Data Source=LAPTOP-FNHEQJH9;Initial Catalog=payroll_service;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"; //Specifying the connection string from the sql server connection.
+
+            SqlConnection connection = new SqlConnection(cconnectionString);
+            try
+            {
+                using (connection)
+                {
+                    string query = @"select BasicPay from dbo.payroll_servicess where EmployeeName=@inputEmployeeName";
+                    SqlCommand command = new SqlCommand(query, connection);
+                    connection.Open();
+                    command.Parameters.AddWithValue("@inputEmployeeName", EmployeeName);
+                    return (double)command.ExecuteScalar();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
 
     }
 }
+
      
 
 

@@ -21,14 +21,16 @@ namespace EmployeePayrollProblem
             //empRepo.FindGroupedByGenderRecord("F");
             empRepo. InsertIntoMultipleTablesWithTransactions(); //UC7
 
+            empRepo.RetrieveEmployeeDetailsFromMultipleTables();
+
             Console.ReadLine();
         }
         public static void AddRecordInput() //UC2 Adding record inputs on the table
         {
             try
-            {                
+            {
                 EmployeeRepository repository = new EmployeeRepository();//Creating a object of EmployeeRepository class.
-            
+
                 EmployeeModel model = new EmployeeModel();// Adding Employee To Database
                 DateTime now = DateTime.Now;
                 model.EmployeeId = 10;
@@ -45,7 +47,7 @@ namespace EmployeePayrollProblem
                 model.StartDate = now;
                 model.City = "Chennai";
                 model.Country = "IN";
-               
+
                 repository.AddEmployee(model);  //call AddEmployee method and pass model values       
             }
             catch (Exception ex)
